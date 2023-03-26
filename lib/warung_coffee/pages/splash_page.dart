@@ -1,3 +1,6 @@
+import 'package:art_of_slicing/warung_coffee/components/primary_button.dart';
+import 'package:art_of_slicing/warung_coffee/components/secondary_button.dart';
+import 'package:art_of_slicing/warung_coffee/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 class WarungCoffeeSplashPage extends StatelessWidget {
@@ -49,41 +52,19 @@ class WarungCoffeeSplashPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(
-                  width: double.infinity,
-                  height: 52,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0XFF4C1641),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
+                WCPrimaryButton(
+                  title: 'Sign In',
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const WarungCoffeeLoginPage(),
                       ),
-                      elevation: 0,
-                    ),
-                    onPressed: () {},
-                    child: const Text(
-                      'Sign In',
-                    ),
-                  ),
+                    );
+                  },
                 ),
                 const SizedBox(height: 6),
-                SizedBox(
-                  width: double.infinity,
-                  height: 52,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0XFFD18645),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(16),
-                      ),
-                      elevation: 0,
-                    ),
-                    onPressed: () {},
-                    child: const Text(
-                      'Sign Up',
-                    ),
-                  ),
-                ),
+                const WCSecondaryButton(title: 'Sign Up'),
               ],
             ),
           ),
