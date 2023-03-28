@@ -1,6 +1,7 @@
 import 'package:art_of_slicing/warung_coffee/components/custom_form_field.dart';
 import 'package:art_of_slicing/warung_coffee/components/primary_button.dart';
 import 'package:art_of_slicing/warung_coffee/components/social_button.dart';
+import 'package:art_of_slicing/warung_coffee/pages/main_page.dart';
 import 'package:flutter/material.dart';
 
 class WCLoginForm extends StatelessWidget {
@@ -58,7 +59,14 @@ class WCLoginForm extends StatelessWidget {
         const SizedBox(height: 18),
         WCPrimaryButton(
           title: 'Sign In',
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const WCMainPage(),
+              ),
+            );
+          },
         ),
         TextButton(
           onPressed: () {},
