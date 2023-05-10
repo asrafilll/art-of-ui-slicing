@@ -1,5 +1,7 @@
 import 'package:art_of_slicing/donation/widgets/custom_nav_widget.dart';
 import 'package:art_of_slicing/donation/widgets/donation_card.dart';
+import 'package:art_of_slicing/donation/widgets/donation_category_widget.dart';
+import 'package:art_of_slicing/donation/widgets/donation_list_vertical_widget.dart';
 import 'package:art_of_slicing/donation/widgets/main_title.dart';
 import 'package:flutter/material.dart';
 
@@ -11,9 +13,10 @@ class DonationHomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0XFFFCFCFC),
       body: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: 75,
-          horizontal: 25,
+        padding: const EdgeInsets.only(
+          top: 75,
+          left: 25,
+          right: 25,
         ),
         child: SingleChildScrollView(
           child: Column(
@@ -32,7 +35,19 @@ class DonationHomePage extends StatelessWidget {
                   separatorBuilder: (context, index) =>
                       const SizedBox(width: 16),
                 ),
-              )
+              ),
+              const SizedBox(height: 35),
+              const DonationCategoryWidget(),
+              const SizedBox(height: 25),
+              ListView.separated(
+                shrinkWrap: true,
+                primary: false,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: 6,
+                itemBuilder: (context, index) =>
+                    const DonationListVerticalWidget(),
+                separatorBuilder: (context, index) => const SizedBox(width: 16),
+              ),
             ],
           ),
         ),

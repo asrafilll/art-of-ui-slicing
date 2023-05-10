@@ -1,6 +1,6 @@
-import 'package:art_of_slicing/donation/account_page.dart';
+import 'package:art_of_slicing/donation/pages/account_page.dart';
 import 'package:art_of_slicing/donation/commons/app_colors.dart';
-import 'package:art_of_slicing/donation/home_page.dart';
+import 'package:art_of_slicing/donation/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
 class DonationMainPage extends StatefulWidget {
